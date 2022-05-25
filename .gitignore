@@ -354,3 +354,6 @@ MigrationBackup/
 *.css.map
 *.sass.map
 *.scss.map
+
+# Ignore txt
+*.txt

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
 body {
   margin: 0px;
   padding: 0px;
@@ -6,8 +7,18 @@ body {
   background: linear-gradient(90deg, #df76cb 0%, #b9900a 46%, #00d4ff 100%);
 }
 
-h1 {
+h1, h4 {
   text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #FDF8E6;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h4 {
+  font-weight: 400;
 }
 
 #container {

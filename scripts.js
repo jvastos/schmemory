@@ -1,8 +1,11 @@
 //Main array holidng all the images to the cards
 const emojis = ["🥝", "🍓", "🍋", "🥭", "🍈" , "🍊", "🍍", "🍑", "🥝", "🍓", "🍋", "🥭", "🍈", "🍊", "🍍", "🍑"];
 
-//Variable to be used as a buffer to permorm the check of the two card currently flipped
+//Variable to be used as a buffer to perform the check of the two card currently flipped
 let currentCards = [];
+
+let moves = 0;
+document.getElementById("moves-counter").innerHTML = moves;
 
 let fruitsSection = document.querySelector("#cards");
 
@@ -63,14 +66,22 @@ function removeUnderCheckClass(elements) {
     });;
 }
 
+function updateMovesCounter() {
+    moves++;
+    document.getElementById("moves-counter").innerHTML = moves;
+}
+
 //Function to check if the two elements currently flipped are equal.
 function matchCheck() {
     let underCheckElements = document.querySelectorAll(".under-check")
 
     if(currentCards.length === 2) {
+        updateMovesCounter();
+
         if(currentCards[0] === currentCards[1] ) {
             currentCards = [];
             removeUnderCheckClass(underCheckElements);
+            updateMovesCounter();
         } else {
             removeFlippedClass(underCheckElements);
             removeUnderCheckClass(underCheckElements);
@@ -81,3 +92,33 @@ function matchCheck() {
 
 //Interval to constantly check if there are two elements flipped. Whene there are, the matchCheck function performs the check on the given pair of cards.
 setInterval(matchCheck, 10);
+
+let minutes = 0;
+let seconds = 0;
+
+
+document.getElementById("minutes").innerHTML = minutes
+document.getElementById("minutes").innerHTML = seconds
+
+const minutesInterval = setInterval(() => {
+    minutes++;
+    document.getElementById("minutes").innerHTML = minutes
+    seconds = 0;
+}, 60000);
+
+const secondsInterval = setInterval(() => {
+    seconds++;
+    document.getElementById("seconds").innerHTML = seconds
+}, 1000);
+
+const finishGameInterval = setInterval(() => {
+    const allFlippedCards = document.querySelectorAll(".flipped");
+    const numberOfFlippedCards = allFlippedCards.length
+    if (numberOfFlippedCards === 16) {
+        clearInterval(minutesInterval);
+        clearInterval(secondsInterval);
+        let time = `${minutes}.${seconds}`;
+        console.log(moves,time)
+        clearInterval(finishGameInterval);
+    }
+}, 100)
