@@ -20,10 +20,12 @@ h1, h4{
 
 h1 {
     font-weight: 900;
+    font-size: 4vh;
 }
 
 h4 {
     font-weight: 400;
+    font-size: 3vh;
 }
 
 #container{
@@ -35,18 +37,18 @@ h4 {
 #cards {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap: 3rem;
+    gap: 3vmax;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    margin-top: 2rem;
+    margin-top: 2vmax;
 }
 
 .card {
-    width: 6rem;
-    height: 6rem;
-    font-size: 3rem;
+    width: 6vmax;
+    height: 6vmax;
+    font-size: 4vmax;
     text-align: center;
     position: relative;
     cursor: pointer;
@@ -56,8 +58,8 @@ h4 {
 .card-back {
     position: absolute;
     border-radius: 5px;
-    width: 6rem;
-    height: 6rem;
+    width: 6vmax;
+    height: 6vmax;
     background: $dark-grey;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
@@ -65,7 +67,7 @@ h4 {
 
 .card-back {
     text-align: center;
-    line-height: 100px;
+    line-height: 6vmax;
     background: $white-pop;
     transform: rotateY(180deg) rotateZ(50deg);
     user-select: none;

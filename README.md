@@ -19,4 +19,5 @@ A simple memory game made with HTML, SASS and Vanilla JS.
 1. All emojis are stored in an array. Each time the game is restarted that array is shuffled using "emojis.sort(() => Math.random() - 0.5);". Basically makind the decision to follow the "a, b" or the "b, a" order a radom one.
 2. Each of the cards is created by Javascript interating over that shuffled array and injecting content in the html.
 3. The timer is made with setIntervals. One for the minutes and one for the seconds.
+4. The responsivness is given by using relative units. No queries.
 
