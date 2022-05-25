@@ -1,14 +1,25 @@
 //Main array holidng all the images to the cards.
 const emojis = ["🥝", "🍓", "🍋", "🥭", "🍈" , "🍊", "🍍", "🍑", "🥝", "🍓", "🍋", "🥭", "🍈", "🍊", "🍍", "🍑"];
 
+const element = {
+    movesCounter: document.getElementById("moves-counter"),
+    fruitsSection: document.querySelector("#cards"),
+    minutes: document.getElementById("minutes"),
+    seconds: document.getElementById("seconds"),
+    modal: document.getElementById("modal"),
+    modalContent: document.getElementById("modal-content"),
+}
+
 //Variable to be used as a buffer to perform the check of the two card currently flipped.
 let currentCards = [];
 
+//Variables to capture minutes and seconds to be used in the timer.
+let minutes = 0;
+let seconds = 0;
+
 //Variable to keep track of how many attempts the player has done so far. 1 attemp = 1 pair flipped (matching or not matching).
 let moves = 0;
-document.getElementById("moves-counter").innerHTML = moves;
-
-let fruitsSection = document.querySelector("#cards");
+element.movesCounter.innerHTML = moves;
 
 //Functions used to create a different sequence of cards everytime the game is restarted (otherwise it would be reallu boring).
 function shuffleFruits() {
@@ -29,7 +40,7 @@ function createCards(){
 //Function to effectively populate the main board of the game.
 function injectFruits() {
     shuffleFruits();
-    fruitsSection.innerHTML = createCards();
+    element.fruitsSection.innerHTML = createCards();
 }
 injectFruits();
 
@@ -48,6 +59,13 @@ document.addEventListener("click", (e) => {
         currentCards.push(target.nextElementSibling.innerHTML);
         console.log(currentCards);
 }})
+
+document.addEventListener("click", (e) => {
+    let target = e.target;
+    if(target.id === "modal") {
+        hideModal();
+    }
+})
 
 //Function to remove the "flipped" class from the NodeList with all elements the have been flipped.
 function removeFlippedClass(elements) {
@@ -69,7 +87,7 @@ function removeUnderCheckClass(elements) {
 
 function updateMovesCounter() {
     moves++;
-    document.getElementById("moves-counter").innerHTML = moves;
+    element.movesCounter.innerHTML = moves;
 }
 
 //Function to check if the two elements currently flipped are equal.
@@ -94,25 +112,31 @@ function matchCheck() {
 //Interval to constantly check if there are two elements flipped. Whene there are, the matchCheck function performs the check on the given pair of cards.
 setInterval(matchCheck, 10);
 
-//Variables to capture minutes and seconds to be used in the timer.
-let minutes = 0;
-let seconds = 0;
-
-document.getElementById("minutes").innerHTML = minutes
-document.getElementById("minutes").innerHTML = seconds
+element.minutes.innerHTML = minutes
+element.seconds.innerHTML = seconds
 
 //Interval to count minutes
 const minutesInterval = setInterval(() => {
     minutes++;
-    document.getElementById("minutes").innerHTML = minutes
+    element.minutes.innerHTML = minutes
     seconds = 0;
 }, 60000);
 
 //Interval to count seconds
 const secondsInterval = setInterval(() => {
     seconds++;
-    document.getElementById("seconds").innerHTML = seconds
+    element.seconds.innerHTML = seconds
 }, 1000);
+
+function showModal(moves, time) {
+    element.modalContent.innerHTML = `Nice!</br></br>You've made it in ${time}</br>using ${moves} moves.`;
+    element.modal.style.display = "block";
+}
+
+function hideModal() {
+    element.modal.style.display = "none";
+    location.reload();
+}
 
 //Interval to watch if the game should be finished. That happens when all the cards are flipped.
 const finishGameInterval = setInterval(() => {
@@ -121,8 +145,9 @@ const finishGameInterval = setInterval(() => {
     if (numberOfFlippedCards === 16) {
         clearInterval(minutesInterval); //Stopping the clock.
         clearInterval(secondsInterval); //Stopping the clock.
-        let time = `${minutes}.${seconds}`; //Capturing where the clock stopped.
+        let time = `${minutes}'${seconds}"`; //Capturing where the clock stopped.
         console.log(moves,time) // A possible output for the result/DB.
+        showModal(moves, time);
         clearInterval(finishGameInterval); //Stopping this very interval.
     }
 }, 100)

@@ -13,7 +13,7 @@ A simple memory game made with HTML, SASS and Vanilla JS.
 #### Game mechanics 🍓
 1. You have a "moves" counter keeping track of how many attempts you have done so far.
 2. You have a clock ticking on you. To give a bit of that stress kick.
-3. The lower both of this numbers are, the better. (see image on the top. that's my best mark do far)
+3. The lower both of this numbers are, the better. (see image on the top. that's my best mark so far)
 
 #### Development key points 🍋
 1. All emojis are stored in an array. Each time the game is restarted that array is shuffled using "emojis.sort(() => Math.random() - 0.5);". Basically makind the decision to follow the "a, b" or the "b, a" order a radom one.
