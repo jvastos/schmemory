@@ -5,8 +5,8 @@ const element = {
 
 export function showModal(moves, time) {
     setTimeout(() => {
-        element.modalContent.innerHTML = `Nice!</br></br>You've made it in ${time}</br>using ${moves} moves.`;
         element.modal.style.display = "block";
+        element.modalContent.innerHTML = `Nice!</br></br>You've made it in ${time}</br>using ${moves} moves.`;
     }, 500)
 }
 

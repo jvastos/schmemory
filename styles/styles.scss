@@ -2,6 +2,14 @@
 
 $white-pop: #FDF8E6;
 $dark-grey: #282A3A;
+$main-font: "Lato", sans-serif;
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 body {
     margin: 0px;
@@ -13,7 +21,7 @@ body {
 
 h1, h4{
     text-align: center;
-    font-family: "Lato", sans-serif;
+    font-family: $main-font;
     color: $white-pop;
 }
 
@@ -37,15 +45,12 @@ h4 {
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 3vmax;
-<<<<<<< Updated upstream:styles.scss
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     margin-top: 2vmax;
-=======
     margin-top: 3vw;
->>>>>>> Stashed changes:styles/styles.scss
 }
 
 .card {
@@ -82,8 +87,6 @@ h4 {
 
 .card.flipped .card-back {
     transform: rotateY(0) rotateZ(0);
-<<<<<<< Updated upstream:styles.scss
-=======
 }
 
 #modal {
@@ -132,5 +135,4 @@ h4 {
         width: 50vw;
         height: 50vh;
     }
->>>>>>> Stashed changes:styles/styles.scss
 }
