@@ -21,3 +21,8 @@ A simple memory game made with HTML, SASS and Vanilla JS.
 3. The timer is made with setIntervals. One for the minutes and one for the seconds.
 4. The responsivness is given by using relative units. No queries.
 
+#### Future steps 🥭
+1. Improve accessibility.
+2. Further improve responsiviness.
+3. Further improve usability (eg. smoother animations, more instructions etc.)
+

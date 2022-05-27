@@ -48,17 +48,10 @@ document.addEventListener("click", (e) => {
         console.log(currentCards);
 }})
 
-document.addEventListener("click", (e) => {
-    let target = e.target;
-    if(target.id === "modal") {
-        hideModal();
-    }
-})
-
 //Event listener to close the modal
 document.addEventListener("click", (e) => {
     let target = e.target;
-    if(target.id === "modal") {
+    if(target.className === "modal") {
         hideModal();
     }
 })

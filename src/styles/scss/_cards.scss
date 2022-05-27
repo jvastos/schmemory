@@ -1,0 +1,49 @@
+#cards {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 3vmax;
+}
+
+.card {
+    width: 8vmax;
+    height: 8vmax;
+    font-size: 4vmax;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    border-radius: 5px;
+    width: 8vmax;
+    height: 8vmax;
+    background-color: $dark-grey;
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+
+    &:hover {
+        background-color: lighten-color($dark-grey);
+    }
+}
+
+.card-back {
+    text-align: center;
+    line-height: 8vmax;
+    background-color: $white-pop;
+    transform: rotateY(180deg) rotateZ(50deg);
+    user-select: none;
+
+    &:hover {
+        background-color: lighten-color($white-pop);
+    }
+}
+
+.card.flipped .card-front {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(0) rotateZ(0);
+}

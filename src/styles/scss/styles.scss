@@ -1,0 +1,39 @@
+@import 'animations';
+@import 'variables';
+@import 'utilities';
+@import 'modal';
+@import 'cards';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background: rgb(223,118,203);
+    background: linear-gradient(90deg, rgba(223,118,203,1) 0%, rgba(185,144,10,1) 46%, rgba(0,212,255,1) 100%);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+h1, h4{
+    font-family: $main-font;
+    color: $white-pop;
+    margin: 1.5vmax 0 0 1.5vmax;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -1,6 +1,6 @@
 const element = {
-    modal: document.getElementById("modal"),
-    modalContent: document.getElementById("modal-content"),
+    modal: document.querySelector(".modal"),
+    modalContent: document.querySelector(".modal-content"),
 }
 
 export function showModal(moves, time) {
