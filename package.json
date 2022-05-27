@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "sass": "^1.52.1"
-  }
+  },
+  "name": "schmemory",
+  "description": "A simple memory game made with HTML, SASS and Vanilla JS.",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvastos/schmemory.git"
+  },
+  "author": "João Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvastos/schmemory/issues"
+  },
+  "homepage": "https://github.com/jvastos/schmemory#readme"
 }
