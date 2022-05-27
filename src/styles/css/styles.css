@@ -36,19 +36,19 @@
 .modal-box {
   width: 50vw;
   height: 50vh;
-  background-color: #FDF8E6;
+  background-color: #fdf8e6;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 5px 5px #282A3A;
+  box-shadow: 5px 5px 5px #282a3a;
   animation: fadeIn 0.5s, moveIn 0.5s;
 }
 .modal-content {
   font-weight: 900;
   font-size: 5vh;
   text-align: center;
-  color: #282A3A;
+  color: #282a3a;
   font-family: "Lato", sans-serif;
   margin: 6vw;
   animation: fadeIn 0.4s;
@@ -75,7 +75,7 @@
   border-radius: 5px;
   width: 8vmax;
   height: 8vmax;
-  background-color: #282A3A;
+  background-color: #282a3a;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   backface-visibility: hidden;
 }
@@ -87,7 +87,7 @@
 .card-back {
   text-align: center;
   line-height: 8vmax;
-  background-color: #FDF8E6;
+  background-color: #fdf8e6;
   transform: rotateY(180deg) rotateZ(50deg);
   user-select: none;
 }
@@ -113,9 +113,10 @@ body {
   overflow: hidden;
 }
 
-h1, h4 {
+h1,
+h4 {
   font-family: "Lato", sans-serif;
-  color: #FDF8E6;
+  color: #fdf8e6;
   margin: 1.5vmax 0 0 1.5vmax;
 }
 
@@ -135,5 +136,3 @@ h4 {
   align-items: center;
   flex-direction: column;
 }
-
-/*# sourceMappingURL=styles.css.map */
