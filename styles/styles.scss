@@ -17,12 +17,14 @@ body {
     border: 0px;
     background: rgb(223,118,203);
     background: linear-gradient(90deg, rgba(223,118,203,1) 0%, rgba(185,144,10,1) 46%, rgba(0,212,255,1) 100%);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 h1, h4{
-    text-align: center;
     font-family: $main-font;
     color: $white-pop;
+    margin: 1.5vmax 0 0 1.5vmax;
 }
 
 h1 {
@@ -39,18 +41,13 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #cards {
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 3vmax;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    margin-top: 2vmax;
-    margin-top: 3vw;
 }
 
 .card {
@@ -118,7 +115,6 @@ h4 {
     color: $dark-grey;
     font-family: $main-font;
     margin: 6vw;
-    box-sizing: border-box;
 }
 
 @keyframes fadeIn {

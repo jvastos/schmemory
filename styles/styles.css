@@ -12,12 +12,14 @@ body {
   border: 0px;
   background: #df76cb;
   background: linear-gradient(90deg, #df76cb 0%, #b9900a 46%, #00d4ff 100%);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 h1, h4 {
-  text-align: center;
   font-family: "Lato", sans-serif;
   color: #FDF8E6;
+  margin: 1.5vmax 0 0 1.5vmax;
 }
 
 h1 {
@@ -34,18 +36,13 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 #cards {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 3vmax;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 2vmax;
-  margin-top: 3vw;
 }
 
 .card {
@@ -113,7 +110,6 @@ h4 {
   color: #282A3A;
   font-family: "Lato", sans-serif;
   margin: 6vw;
-  box-sizing: border-box;
 }
 
 @keyframes fadeIn {
