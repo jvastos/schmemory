@@ -357,3 +357,6 @@ MigrationBackup/
 
 # Ignore txt
 *.txt
+
+# Ignore Prettier config
+*.config.js
