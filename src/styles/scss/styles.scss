@@ -9,31 +9,32 @@ body {
     margin: 0px;
     padding: 0px;
     border: 0px;
-    background: rgb(223,118,203);
-    background: linear-gradient(90deg, rgba(223,118,203,1) 0%, rgba(185,144,10,1) 46%, rgba(0,212,255,1) 100%);
+    background: rgb(223, 118, 203);
+    background: linear-gradient(90deg, rgba(223, 118, 203, 1) 0%, rgba(185, 144, 10, 1) 46%, rgba(0, 212, 255, 1) 100%);
     box-sizing: border-box;
     overflow: hidden;
 }
 
-h1, h4{
-    font-family: $main-font;
-    color: $white-pop;
-    margin: 1.5vmax 0 0 1.5vmax;
+h1,
+h4 {
+  font-family: $main-font;
+  color: $white-pop;
+  margin: 1.5vmax 0 0 1.5vmax;
 }
 
 h1 {
-    font-weight: 900;
-    font-size: 2rem;
+  font-weight: 900;
+  font-size: 2rem;
 }
 
 h4 {
-    font-weight: 400;
-    font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 1.3rem;
 }
 
-#container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
