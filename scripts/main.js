@@ -15,8 +15,6 @@ const element = {
 //Variable to be used as a buffer to perform the check of the two card currently flipped.
 let currentCards = [];
 
-
-
 //Variable to keep track of how many attempts the player has done so far. 1 attemp = 1 pair flipped (matching or not matching).
 let moves = 0;
 element.movesCounter.innerHTML = moves;
@@ -56,7 +54,6 @@ document.addEventListener("click", (e) => {
         hideModal();
     }
 })
-
 
 //Event listener to close the modal
 document.addEventListener("click", (e) => {

@@ -6,7 +6,7 @@ export function shuffleArray(array) {
 //Function to remove the "flipped" class from the NodeList with all elements that have been flipped.
 export function removeFlippedClass(elements) {
     elements.forEach(element => {
-        setTimeout(() => { //the time out gives a better experience to the player. Otherwise the player wouldn't be able to even see the figure in the second card flipped.
+        setTimeout(() => { //the time out gives a better experience to the player. Otherwise the player wouldn't be able to even see the figure when the second card flipped.
             element.classList.remove("flipped");
         }, 1000); 
     });;
