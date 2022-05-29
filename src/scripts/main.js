@@ -16,8 +16,10 @@ let currentCards = [];
 let moves = 0;
 movesCounter.innerHTML = moves;
 
+//Funciton to start the time counting. See further on the timer.js file.
 startTimer();
 
+//Funciton to create the cards and inject the fruit emojis in them. See further on the cards.js file.
 injectFruits(emojis);
 
 //Event listener triggered every time a card is clicked. It performs checks to make sure the card still needs to be flipped among other things.
