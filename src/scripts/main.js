@@ -1,44 +1,24 @@
-import { shuffleArray, removeFlippedClass, removeUnderCheckClass, flipCard } from './modules/helper.js';
+import { removeFlippedClass, removeUnderCheckClass, flipCard } from './modules/helper.js';
+import { injectFruits } from './modules/cards.js';
 import { showModal, hideModal } from './modules/modal.js';
 import { minutesInterval, secondsInterval, startTimer, minutes, seconds } from './modules/timer.js';
-
-startTimer();
 
 //Main array holidng all the images to the cards.
 const emojis = ['🥝', '🍓', '🍋', '🥭', '🍈', '🍊', '🍍', '🍑', '🥝', '🍓', '🍋', '🥭', '🍈', '🍊', '🍍', '🍑'];
 
-const element = {
-	movesCounter: document.getElementById('moves-counter'),
-	fruitsSection: document.querySelector('#cards'),
-};
+//Variable to catch the moves counter element from the UI.
+const movesCounter = document.getElementById('moves-counter');
 
 //Variable to be used as a buffer to perform the check of the two card currently flipped.
 let currentCards = [];
 
 //Variable to keep track of how many attempts the player has done so far. 1 attemp = 1 pair flipped (matching or not matching).
 let moves = 0;
-element.movesCounter.innerHTML = moves;
+movesCounter.innerHTML = moves;
 
-//Function to create the content to populate the main board of the game with the figures in the "emojis" array.
-function createCards() {
-	let cards = emojis.map(
-		(i) =>
-			`
-            <div class="card">
-                <div class="card-front"></div>
-                <div class="card-back">${i}</div>
-            </div>
-            `
-	);
-	return cards.join('');
-}
+startTimer();
 
-//Function to effectively populate the main board of the game.
-function injectFruits() {
-	shuffleArray(emojis);
-	element.fruitsSection.innerHTML = createCards();
-}
-injectFruits();
+injectFruits(emojis);
 
 //Event listener triggered every time a card is clicked. It performs checks to make sure the card still needs to be flipped among other things.
 document.addEventListener('click', (e) => {
@@ -62,7 +42,7 @@ document.addEventListener('click', (e) => {
 
 function updateMovesCounter() {
 	moves++;
-	element.movesCounter.innerHTML = moves;
+	movesCounter.innerHTML = moves;
 }
 
 //Function to check if the two elements currently flipped are equal.
