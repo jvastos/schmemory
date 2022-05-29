@@ -8,7 +8,7 @@ A simple memory game made with HTML, SASS and Vanilla JS.
 
 #### Cards 🥝
 
-1. Each of the cards is based on a Emoji. This means unicode instead of assets. (it's light and equaly good looking)
+1. Each of the cards is based on a Emoji. So no real assets. (unicode Emojis are light and still good looking)
 2. The cards flip with CSS animations. Using "transform" with "rotateY" and "rotateZ" and toggling a class ".flipped".
 3. The tactile look and feel of the cards is done using different divs for the front and the back of the card and some help of "backface-visibility: hidden;".
 
