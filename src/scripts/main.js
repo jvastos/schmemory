@@ -30,7 +30,6 @@ document.addEventListener('click', (e) => {
 		flipCard(target.parentElement); // call to the function that actually adds the "flipped" class to the card and triggers the visual effect programmed in the css.
 		target.parentElement.classList.add('under-check'); //adding a temporary class to make it easier to track and remove other classes later on.
 		currentCards.push(target.nextElementSibling.innerHTML);
-		console.log(currentCards);
 	}
 });
 
