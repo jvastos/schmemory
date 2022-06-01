@@ -77,7 +77,7 @@
   height: 8vmax;
   background-color: #282a3a;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .card-front:hover,
 .card-back:hover {
@@ -88,7 +88,7 @@
   text-align: center;
   line-height: 8vmax;
   background-color: #fdf8e6;
-  transform: rotateY(180deg) rotateZ(50deg);
+  -webkit-transform: rotateY(180deg) rotateZ(50deg);
   user-select: none;
 }
 .card-back:hover {
@@ -96,11 +96,11 @@
 }
 
 .card.flipped .card-front {
-  transform: rotateY(180deg) rotateZ(50deg);
+  -webkit-transform: rotateY(180deg) rotateZ(50deg);
 }
 
 .card.flipped .card-back {
-  transform: rotateY(0) rotateZ(0);
+  -webkit-transform: rotateY(0) rotateZ(0);
 }
 
 body {
@@ -136,3 +136,5 @@ h4 {
   align-items: center;
   flex-direction: column;
 }
+
+/*# sourceMappingURL=styles.css.map */

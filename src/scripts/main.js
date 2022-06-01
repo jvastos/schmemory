@@ -42,8 +42,7 @@ document.addEventListener('click', (e) => {
 });
 
 function updateMovesCounter() {
-	moves++;
-	movesCounter.innerHTML = moves;
+	movesCounter.innerHTML = ++moves;
 }
 
 //Function to check if the two elements currently flipped are equal.
